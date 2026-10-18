@@ -117,7 +117,7 @@ jobs:
           INPUT_TARGETS: ${{ inputs.targets }}
         run: |
           ARGS=("$INPUT_URL" "--name" "$INPUT_NAME")
-
+          ARGS+=("--inject" "./mada-scrollbar.js")
           if [ -n "$INPUT_ICON" ]; then
             ARGS+=("--icon" "$INPUT_ICON")
           fi
@@ -187,7 +187,7 @@ jobs:
           INPUT_TARGETS: ${{ inputs.targets }}
         run: |
           $args = $env:INPUT_URL, "--name", $env:INPUT_NAME
-
+          $args += "--inject", "./mada-scrollbar.js"
           # Empty environment variables are unset on Windows, so test for null too.
           if (-not [string]::IsNullOrEmpty($env:INPUT_ICON)) {
             $args += "--icon", $env:INPUT_ICON
