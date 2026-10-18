@@ -1,4 +1,3 @@
-
 (() => {
   const css = `
     html, body {
@@ -32,6 +31,6 @@
   apply();
   new MutationObserver(apply).observe(document.documentElement, {
     childList: true,
-    subtree: true
+    subtree: true,
   });
 })();
